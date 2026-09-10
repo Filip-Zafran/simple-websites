@@ -1,3 +1,4 @@
+import {initEffects} from './effects.js';
 import {pageTemplates} from './page-templates.js';
 import {translator,palettes,languages} from './content.js';
 import {renderPageFields,renderImageUrlRow} from './components.js';
@@ -48,7 +49,7 @@ export function initForm(lang){
  function clearPalette(){for(const button of $$('[data-palette]'))button.setAttribute('aria-pressed','false')}
  function addColor(value='#1687f8'){
   const row=document.createElement('div');row.className='color-row';
-  row.innerHTML=`<input type="color" value="${value}" aria-label="${t('colors')}"><input type="text" name="colors" value="${value}" pattern="#[0-9a-fA-F]{6}" aria-label="${t('hex')}" maxlength="7"><button type="button">${t('remove')}</button>`;
+  row.innerHTML=`<input type="color" value="${value}" aria-label="${t('colors')}"><input type="text" name="colors" value="${value}" placeholder="#1687F8" pattern="#[0-9a-fA-F]{6}" aria-label="${t('hex')}" maxlength="7"><button type="button">${t('remove')}</button><span class="color-picker-hint"><span aria-hidden="true">↑</span>${t('colorPickerHint')}</span>`;
   const picker=row.querySelector('[type=color]'),hex=row.querySelector('[type=text]');
   picker.addEventListener('input',()=>{hex.value=picker.value;clearPalette()});
   hex.addEventListener('input',()=>{if(/^#[0-9a-f]{6}$/i.test(hex.value))picker.value=hex.value;clearPalette()});
@@ -65,7 +66,7 @@ export function initForm(lang){
   if(remove){const group=remove.closest('.image-url-group'),row=remove.closest('.image-url-row');if(group.querySelectorAll('.image-url-row').length===1){row.querySelector('input').value='';row.querySelector('input').focus()}else{row.remove();group.querySelector('input').focus()}dirty=true}
  });
 
- function payload(){const data=new FormData(form),result={language:lang,pages:[],files:[]};for(const [key,value] of data){if(value instanceof File){if(value.name)result.files.push({field:key,name:value.name,size:value.size,type:value.type});continue}if(key.startsWith('page-')||['form-name','company-url'].includes(key))continue;if(['features','websiteLanguages','colors','imageUrls'].includes(key)){if(value.trim())(result[key]??=[]).push(value)}else result[key]=value}
+ function payload(){const data=new FormData(form),result={language:lang,pages:[],files:[],effects:[]};for(const [key,value] of data){if(value instanceof File){if(value.name)result.files.push({field:key,name:value.name,size:value.size,type:value.type});continue}if(key.startsWith('page-')||['form-name','company-url'].includes(key))continue;if(['features','websiteLanguages','colors','imageUrls','effects','socialUrls','currentWebsite','references'].includes(key)){if(value.trim())(result[key]??=[]).push(value)}else result[key]=value}
   for(const page of $$('.page-fields')){const entry={};for(const el of page.querySelectorAll('input,textarea')){const key=el.name.replace(/^page-\d+-/,'');if(key==='imageUrls'){if(el.value.trim())(entry.imageUrls??=[]).push(el.value.trim())}else entry[key]=el.type==='file'?[...el.files].map(f=>f.name):el.value}result.pages.push(entry)}return result;
  }
  function download(){const blob=new Blob([JSON.stringify(payload(),null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='website-request.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);status.textContent=t('saved')}
@@ -78,5 +79,6 @@ export function initForm(lang){
   try{const data=new FormData();data.set('form-name','website-request');data.set('company-url',$('[name=company-url]').value);data.set('name',$('[name=name]').value);data.set('email',$('[name=email]').value);data.set('request',JSON.stringify(payload()));let index=0;for(const input of $$('input[type=file]'))for(const file of input.files)data.append(`attachment-${index++}`,file);if(index>20)throw new Error('Too many attachments');const response=await fetch('/',{method:'POST',body:data});if(!response.ok)throw new Error('Submission failed');dirty=false;form.innerHTML=`<div class="success-panel" role="status"><h2>${t('thanks')}</h2></div>`;
   }catch{error.textContent=t('failure');submit.disabled=false;submit.textContent=t('submit')}
  });
+ initEffects(form,lang);
  updatePages();conditions();$('#local-notice').hidden=!local;
 }
