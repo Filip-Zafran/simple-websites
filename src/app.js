@@ -1,4 +1,4 @@
-import {renderPage} from './components.js';
+import {renderPage,pageTitle} from './components.js';
 import {initForm} from './form.js';
 import {languages,translator} from './content.js';
 const params=new URLSearchParams(location.search);
@@ -7,7 +7,7 @@ const route=location.pathname.replace(/^\/+|\/+$/g,'');
 if(lang!=='en') document.getElementById('app').innerHTML=renderPage(route,lang);
 document.documentElement.lang=lang;
 const t=translator(lang);
-document.title=`${t('nav').split('|')[['','complex-sites','apply','contact'].indexOf(route)]||t('nav').split('|')[0]} · I Build Cheap Simple Websites Fast`;
+document.title=`${pageTitle(route,lang)||t('nav').split('|')[0]} · I Build Cheap Simple Websites Fast`;
 document.querySelector('meta[name="description"]').content=route==='complex-sites'?t('complexIntro'):t('intro');
 const menu=document.querySelector('.menu-button');
 menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',open);document.getElementById('navigation').classList.toggle('open',open)});

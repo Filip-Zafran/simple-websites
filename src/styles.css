@@ -71,3 +71,10 @@ body:has(.landing-page) .footer-bottom{font-size:12px}
 .page-template-picker h3{font-size:17px}
 .page-template-options{display:flex;flex-wrap:wrap;gap:9px}
 .page-template-options button:hover{border-color:var(--blue);background:#eef6ff}
+.legal-page{max-width:900px}
+.legal-page>section{margin-top:32px}
+.legal-page h2{font-size:24px;margin-bottom:15px}
+.legal-page section p{font-size:15px;color:var(--muted);margin:8px 0;overflow-wrap:anywhere}
+.legal-sources{margin-top:35px;font-size:13px}
+.legal-links{display:flex;gap:18px;flex-wrap:wrap}
+.footer-bottom{flex-wrap:wrap}

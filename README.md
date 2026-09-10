@@ -1,6 +1,6 @@
 # I Build Cheap Simple Websites Fast
 
-A dependency-free, responsive, four-page static site. English is pre-rendered for fast loading and indexing; German and Croatian use `?lang=de` and `?lang=hr` with the same shared components. JavaScript is needed for translated views and the multi-step form.
+A dependency-free, responsive, six-page static site. English is pre-rendered for fast loading and indexing; German and Croatian use `?lang=de` and `?lang=hr` with the same shared components. JavaScript is needed for translated views and the multi-step form.
 
 ## Run
 
@@ -29,3 +29,7 @@ To use a different backend, replace the fetch adapter in `src/form.js`. Netlify 
 All supplied references are linked. Six references are shown directly on the landing page; the remaining project appears under “More projects.” Duck Playspace and CRM examples appear on the complex-site page. Preview artwork is explicitly labeled as placeholder imagery because the reference sites could not be retrieved from this environment. The CRM is an illustrative HTML layout based on the screenshot supplied in chat, not the original screenshot file. Replace it in `src/components.js` with the original asset when available. The calendar demo is also a labeled layout placeholder and links to Harmonie Studio.
 
 No hosting or domain subscriptions were purchased and the site has not been deployed.
+
+## Legal page templates
+
+`/datenschutz/` and `/impressum/` are linked from every footer. Their complete English, German and Croatian template copy lives in `src/legal.js`. Replace the bracketed fields with actual operator, hosting, form processing, retention and contact information in all three languages before treating them as final notices. They are explicitly labeled templates.
