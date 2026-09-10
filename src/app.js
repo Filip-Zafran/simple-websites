@@ -1,10 +1,12 @@
+import {basePath} from './site-config.js';
+import {routeFromPath} from './site-paths.js';
 import {renderPage,pageTitle} from './components.js';
 import {initForm} from './form.js';
 import {languages,translator} from './content.js';
 const params=new URLSearchParams(location.search);
 const lang=languages.includes(params.get('lang'))?params.get('lang'):'en';
-const route=location.pathname.replace(/^\/+|\/+$/g,'');
-if(lang!=='en') document.getElementById('app').innerHTML=renderPage(route,lang);
+const route=routeFromPath(location.pathname,basePath);
+if(lang!=='en') document.getElementById('app').innerHTML=renderPage(route,lang,basePath);
 document.documentElement.lang=lang;
 const t=translator(lang);
 document.title=`${pageTitle(route,lang)||t('nav').split('|')[0]} · I Build Cheap Simple Websites Fast`;

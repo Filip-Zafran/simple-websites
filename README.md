@@ -33,3 +33,7 @@ No hosting or domain subscriptions were purchased and the site has not been depl
 ## Legal page templates
 
 `/datenschutz/` and `/impressum/` are linked from every footer. Their complete English, German and Croatian template copy lives in `src/legal.js`. Replace the bracketed fields with actual operator, hosting, form processing, retention and contact information in all three languages before treating them as final notices. They are explicitly labeled templates.
+
+## GitHub Pages
+
+The `.github/workflows/pages.yml` workflow tests, builds and deploys `dist/` when `main` is updated. In repository Settings → Pages, choose **GitHub Actions** as the publishing source. The workflow reads the Pages base path automatically, supporting the `/simple-websites/` project URL. `SITE_BASE_PATH=/simple-websites npm run build` reproduces this build locally; omit that variable for root hosting such as Netlify. GitHub Pages runs the form in download mode because it has no submission backend.
