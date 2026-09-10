@@ -342,3 +342,27 @@ footer{background:radial-gradient(ellipse at 8% 80%,#cbece980,transparent 55%),r
 @media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){.complex-reference-card:hover{transform:translateY(-4px);box-shadow:0 15px 35px #071a2b12}}
 @media(max-width:900px){.complex-reference-grid{grid-template-columns:1fr}}
 @media(max-width:480px){.complex-reference-card{padding:20px}.reference-card-body h3{font-size:27px}.complex-reference-card .booking-showcase{gap:8px;padding:14px 8px}.complex-reference-card .booking-mobile{width:90px}.complex-reference-card .booking-inner{padding:10px}.complex-reference-card .booking-mobile h3{font-size:12px}}
+.roi-table-wrap{overflow-x:auto;margin-top:25px;border-radius:12px;border:1px solid #e8dbbd;background:#ffffffc9}
+.roi-table{width:100%;border-collapse:collapse;text-align:left;font-size:16px;line-height:1.5}
+.roi-table th,.roi-table td{padding:16px 18px;border-bottom:1px solid #eee3cc;vertical-align:top}
+.roi-table thead{background:#fff0ce;font-size:14px}
+.roi-table tbody th{font-weight:650}.roi-table tbody tr:last-child>*{border-bottom:0}
+.roi-table td:nth-child(2){white-space:nowrap;font-weight:700}
+.comparison .roi-note{font-size:13px}.comparison .roi-payback{font-size:17px;font-weight:700;color:var(--navy)}
+@media(max-width:760px){.roi-table{font-size:13px;min-width:460px}.roi-table th,.roi-table td{padding:12px}.comparison .roi-payback{font-size:15px}}
+.roi-calculator{margin-top:32px;padding-top:28px;border-top:1px solid #e8dbbd}
+.roi-calculator>h3{font-size:32px}.roi-inputs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:25px 0}
+.roi-inputs label{font-size:13px;font-weight:650;line-height:1.5;display:flex;flex-direction:column;justify-content:space-between;gap:8px}
+.roi-inputs input{min-width:0}.roi-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:25px 0}
+.roi-metrics>div{padding:20px;background:#fff;border:1px solid #e4ddce;border-radius:14px}
+.roi-metrics span{display:block;font-size:13px;color:var(--muted);margin-bottom:12px}
+.roi-metrics strong{font-size:27px;line-height:1.25;color:#075da7}
+.roi-chart-legend{display:flex;flex-wrap:wrap;gap:14px 24px;font-size:14px;margin-bottom:15px;line-height:1.6}
+.roi-chart-legend>span::before{content:'';display:inline-block;width:24px;border-top:4px solid #0874dd;margin-right:8px;vertical-align:middle}
+.roi-chart-legend>.builder-line::before{border-top:4px dashed #b62968}
+.roi-chart-scroll{overflow-x:auto;background:#fff;border:1px solid #e4ddce;border-radius:14px;padding:10px}
+.roi-chart{display:block;width:100%;min-width:450px;height:auto}.roi-chart text{font-family:inherit;font-size:14px;fill:#435565}
+.comparison .roi-recurring,.comparison .roi-assumptions{font-size:13px}
+.roi-formula{margin-top:20px;font-size:14px}.roi-formula summary{font-size:15px}.roi-formula p{font-size:14px}
+#roi-error{color:#a32032}
+@media(max-width:760px){.roi-inputs{grid-template-columns:repeat(2,minmax(0,1fr))}.roi-metrics{grid-template-columns:1fr}.roi-calculator>h3{font-size:27px}.roi-metrics>div{padding:16px}.roi-metrics strong{font-size:25px}}

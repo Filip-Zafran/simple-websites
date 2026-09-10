@@ -9,6 +9,15 @@ export const palettes = [
  ['#292524','#78716C','#D6D3D1','#FAFAF9']
 ];
 export const copy = {
+roiTitle: ['Lower running costs. Long-term value.','Weniger laufende Kosten. Langfristiger Mehrwert.','Niži tekući troškovi. Dugoročna vrijednost.'],
+roiHeaders: ['Setup|Yearly cost*|Booking, CRM & emails','Lösung|Jährliche Kosten*|Buchung, CRM & E-Mails','Rješenje|Godišnji trošak*|Rezervacije, CRM i e-pošta'],
+roiStatic: ['Netlify static site','Statische Netlify-Website','Statična Netlify stranica'],
+roiDomain: ['€0 + domain','0 € + Domain','0 € + domena'],
+roiCustomFeatures: ['Built or added separately','Separat entwickeln oder ergänzen','Izrađuje se ili dodaje zasebno'],
+roiIncluded: ['Included','Enthalten','Uključeno'],
+roiBasic: ['Basic client profiles','Einfache Kundenprofile','Osnovni profili klijenata'],
+roiNote: ['*Illustrative estimates; plans, features and billing vary. Static hosting excludes custom development and backend costs.','*Beispielhafte Schätzungen; Tarife, Funktionen und Abrechnung variieren. Statisches Hosting enthält keine individuelle Entwicklung oder Backend-Kosten.','*Ilustrativne procjene; paketi, funkcije i naplata variraju. Statični hosting ne uključuje prilagođenu izradu ni troškove pozadinskog sustava.'],
+roiPayback: ['Payback = build cost ÷ monthly savings. For example, €500 ÷ €25 saved = 20 months.','Amortisation = Entwicklungskosten ÷ monatliche Ersparnis. Beispiel: 500 € ÷ 25 € Ersparnis = 20 Monate.','Povrat ulaganja = trošak izrade ÷ mjesečna ušteda. Primjer: 500 € ÷ 25 € uštede = 20 mjeseci.'],
 duckReference: ['Reference: Custom CRM system','Referenz: Individuelles CRM-System','Referenca: Prilagođeni CRM sustav'],
 customCrmTitle: ['Custom CRM system','Individuelles CRM-System','Prilagođeni CRM sustav'],
 colorPickerHint: ['Click the colour to open the colour picker.','Klicke auf die Farbe, um die Farbauswahl zu öffnen.','Klikni boju za otvaranje birača boja.'],
@@ -65,7 +74,7 @@ domainLink: ['Check domain prices on STRATO','Domainpreise bei STRATO prüfen','
 complexPromo: ['Need something more powerful?','Brauchst du mehr Funktionen?','Trebaš nešto naprednije?'],
 complexPromoText: ['Booking systems, a CRM, user accounts or online payments? Let’s build something that does the heavy lifting for you.','Buchungssystem, CRM, Benutzerkonten oder Online-Zahlungen? Lass uns etwas bauen, das dir Arbeit abnimmt.','Rezervacije, CRM, korisnički računi ili online plaćanja? Izradimo nešto što preuzima dio posla.'],
 seeComplex: ['Explore complex websites','Komplexe Websites ansehen','Pogledaj složene stranice'],
-complexTitle: ['Return of investment in a year','Amortisation innerhalb eines Jahres','Povrat ulaganja u godinu dana'],
+complexTitle: ['See when your website pays off.','Sieh, wann sich deine Website lohnt.','Pogledaj kada se tvoja stranica isplati.'],
 complexIntro: ['For websites that need more than a few static pages. Custom tools that turn everyday admin into time for something better.','Für Websites, die mehr als statische Seiten brauchen. Individuelle Werkzeuge, die dir im Alltag Zeit sparen.','Za stranice kojima treba više od nekoliko statičnih stranica. Prilagođeni alati koji štede vrijeme u svakodnevnom poslu.'],
 features: ['Booking systems|CRM systems|Calendars|User accounts & login|Online payments|Databases|Admin dashboards|Custom forms|Dynamic content','Buchungssysteme|CRM-Systeme|Kalender|Benutzerkonten & Login|Online-Zahlungen|Datenbanken|Admin-Dashboards|Individuelle Formulare|Dynamische Inhalte','Sustavi rezervacija|CRM sustavi|Kalendari|Korisnički računi i prijava|Online plaćanja|Baze podataka|Administratorske ploče|Prilagođeni obrasci|Dinamičan sadržaj'],
 development: ['Development','Entwicklung','Izrada'],

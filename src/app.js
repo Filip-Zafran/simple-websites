@@ -1,3 +1,4 @@
+import {initRoi} from './roi.js';
 import {basePath} from './site-config.js';
 import {routeFromPath} from './site-paths.js';
 import {renderPage,pageTitle} from './components.js';
@@ -23,3 +24,5 @@ for(const dropdown of languageDropdowns){
  dropdown.addEventListener('focusout',event=>{if(!dropdown.contains(event.relatedTarget))dropdown.open=false});
 }
 document.addEventListener('click',event=>{for(const dropdown of languageDropdowns)if(!dropdown.contains(event.target))dropdown.open=false});
+
+if(route==='complex-sites') initRoi(lang);
